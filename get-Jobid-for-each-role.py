@@ -12,11 +12,11 @@ f3= open("JobId_list.txt","w+")
 
 def HelperFun(x): 
     y = str(x)
-    print(y)
+    #print(y)
     response = client.generate_service_last_accessed_details(
     Arn=y
 )
-    print(response['JobId'])
+    #print(response['JobId'])
     f3.write(response['JobId'] + "\n")
 
 for role in Job_Ids_from_file:
