@@ -11,7 +11,6 @@ print(response)
 
 marker = None
 
-role_list = iam.list_roles()
 full_role_list = []
 
 while True:
