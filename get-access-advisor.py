@@ -12,10 +12,6 @@ marker = None
 role_list = iam.list_roles()
 full_role_list = []
 
-f = open("ResourcesID.txt","w+")
-f.write("Now the file has more content!")
-
-
 while True:
     paginator = iam.get_paginator('list_roles')
     response_iterator = paginator.paginate( 
