@@ -15,5 +15,5 @@ for role in Job_Ids_from_file:
     Arn='arn:aws:iam::439463768147:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonElasticsearchService'
 )
     print("role print: " + role)
-    print("response print: " + response)
+    print(response)
     f3.write(response['JobId'] + "\n")
