@@ -27,8 +27,8 @@ while True:
         for user in u:
             print(user['Arn']
             
- try:
-        marker = page['Marker']
-        print(marker)
-    except KeyError:
-        sys.exit()
+    try:
+            marker = page['Marker']
+            print(marker)
+        except KeyError:
+            sys.exit()
