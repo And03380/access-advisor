@@ -1,8 +1,9 @@
 import boto3
 
-client = boto3.client('iam')
+iam = boto3.client('iam')
 
 role_list = client.list_roles()
-print(role_list)
-for x in role_list:
-    print(x)
+
+paginator = iam.get_paginator('list_roles')
+for response in paginator.paginate():
+    print(response)
