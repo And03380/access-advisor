@@ -10,9 +10,9 @@ f2.close()
 f3= open("JobId_list.txt","w+")
 
 for role in Job_Ids_from_file:
-    
+    string_role = str(role)
     response = client.generate_service_last_accessed_details(
-    Arn=[role]
+    Arn=string_role
 )
     
     print(response['JobId'])
