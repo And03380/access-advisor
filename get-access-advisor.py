@@ -2,15 +2,14 @@ import sys
 import boto3
 import json
 import requests
-import configparser
-import os
-import logging
 from pathlib import Path
 iam = boto3.client('iam')
 marker = None
 
 role_list = iam.list_roles()
 full_role_list = []
+f= open("Role_ARN.txt","w+")
+
 
 while True:
     paginator = iam.get_paginator('list_roles')
@@ -22,6 +21,7 @@ while True:
         u = page['Roles']
         for user in u:
             print(user['Arn'])
+            f.write(user['Arn'])
     try:
             marker = page['Marker']
             print(marker)
