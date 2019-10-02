@@ -1,8 +1,6 @@
 import sys
 import boto3
-import json
-import requests
-from pathlib import Path
+
 iam = boto3.client('iam')
 marker = None
 
