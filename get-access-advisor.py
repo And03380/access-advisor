@@ -1,6 +1,6 @@
 import boto3
 
-iam = boto3.resource('iam')
+client = boto3.client('iam')
 
 role_list = client.list_roles()
 for role in role_list:
