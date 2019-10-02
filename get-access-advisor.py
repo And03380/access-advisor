@@ -17,14 +17,6 @@ while True:
         u = page['Roles']
         for user in u:
             full_role_list.append(user['Arn'])
-                        
-            
-    try:
-        marker = page['Marker']
-        print(marker)
-    except KeyError:
-        sys.exit()
         
-
 for x in full_role_list:
     print(x)
