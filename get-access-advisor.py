@@ -16,9 +16,8 @@ while True:
         print("Next Page : {} ".format(page['IsTruncated']))
         u = page['Roles']
         for user in u:
-            print(user['Arn'])
             full_role_list.append(user['Arn'])
-            
+                        
             
     try:
         marker = page['Marker']
@@ -27,3 +26,5 @@ while True:
         sys.exit()
         
 
+for x in full_role_list:
+    print(x)
