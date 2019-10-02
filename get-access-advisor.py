@@ -14,7 +14,7 @@ full_role_list = []
 
 f = open("ResourcesID.txt","w+")
 f.write("Now the file has more content!")
-f.close()
+
 
 while True:
     paginator = iam.get_paginator('list_roles')
