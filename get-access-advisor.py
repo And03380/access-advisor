@@ -4,5 +4,5 @@ client = boto3.client('iam')
 
 role_list = client.list_roles()
 
-for role in role_list['roles]:
+for role in role_list['roles']:
     print(role)
