@@ -14,7 +14,7 @@ marker = None
 full_role_list = []
 
 while True:
-    paginator = iam.get_paginator('generate_service_last_accessed_details')
+    paginator = client.get_paginator('generate_service_last_accessed_details')
     response_iterator = paginator.paginate( 
         PaginationConfig={
             'StartingToken': marker})
