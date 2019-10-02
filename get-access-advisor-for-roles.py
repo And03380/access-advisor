@@ -18,7 +18,9 @@ def HelperFun(x):
 )
     #print(response['JobId'])
     #f3.write(response + "\n")
-    f3.write(response['ServicesLastAccessed'] + "\n")
+    print(response['ServicesLastAccessed'])
+    tt = str(response['ServicesLastAccessed'])
+    f3.write(tt + "\n")
 
 for role in Job_Ids_from_file:
     HelperFun(role)
