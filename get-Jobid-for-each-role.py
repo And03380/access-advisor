@@ -15,6 +15,7 @@ def HelperFun(x):
     Arn=x
 )
     print(response['JobId'])
+    f3.write(response['JobId'] + "\n")
 
 for role in Job_Ids_from_file:
     HelperFun(role)
@@ -22,4 +23,4 @@ for role in Job_Ids_from_file:
     #Arn="\"role\": \"" + role + "\""
 #)    
     #print(response['JobId'])
-    f3.write(response['JobId'] + "\n")
+    #f3.write(response['JobId'] + "\n")
