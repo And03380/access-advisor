@@ -11,5 +11,6 @@ f3= open("JobId_list.txt","w+")
 
 for roles in Job_Ids_from_file:
     
-    response = client.generate_service_last_accessed_details(Arn=[roles])
+    response = client.generate_service_last_accessed_details(Arn=roles)
+    print(roles)
     f3.write(response['JobId'] + "\n")
