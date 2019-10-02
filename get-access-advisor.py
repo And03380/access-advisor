@@ -5,6 +5,7 @@ marker = None
 
 role_list = iam.list_roles()
 
+
 while True:
     paginator = iam.get_paginator('list_roles')
     response_iterator = paginator.paginate( 
@@ -15,6 +16,8 @@ while True:
         u = page['Roles']
         for user in u:
             print(user['Arn'])
+            role_list.append(user['Arn'])
+            
             
     try:
         marker = page['Marker']
@@ -22,5 +25,4 @@ while True:
     except KeyError:
         sys.exit()
         
-for roley in role_list:
-    print(roley)
+
