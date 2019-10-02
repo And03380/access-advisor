@@ -3,9 +3,7 @@ import boto3
 
 client = boto3.client('iam')
 
-f2= open("Role_ARN.txt") 
-
-f2= open("ResourcesID.txt")
+f2= open("Role_ARN.txt")
 Job_Ids_from_file = f2.read().split("\n")
 
 f3= open("JobId_list.txt","w+")
