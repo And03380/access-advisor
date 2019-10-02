@@ -4,8 +4,6 @@ import boto3
 iam = boto3.client('iam')
 marker = None
 
-def handler_name(event, context): 
-
 role_list = iam.list_roles()
 full_role_list = []
 f= open("Role_ARN.txt","w+")
@@ -26,5 +24,3 @@ while True:
             print(marker)
     except KeyError:
             sys.exit()
-
-return some_value
