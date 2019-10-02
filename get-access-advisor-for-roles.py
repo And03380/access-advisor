@@ -13,7 +13,7 @@ f3= open("out_puts.txt","w+")
 def HelperFun(x): 
     y = str(x)
     #print(y)
-    response = client.get_organizations_access_report(
+    response = client.get_service_last_accessed_details(
     JobId=y
 )
     #print(response['JobId'])
