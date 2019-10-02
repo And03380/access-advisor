@@ -25,5 +25,5 @@ while True:
     try:
             marker = page['Marker']
             print(marker)
-        except KeyError:
+    except KeyError:
             sys.exit()
