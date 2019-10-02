@@ -8,7 +8,7 @@ def handler_name(event, context):
 
 role_list = iam.list_roles()
 full_role_list = []
-#f= open("Role_ARN.txt","w+")
+f= open("Role_ARN.txt","w+")
 
 
 while True:
@@ -20,7 +20,7 @@ while True:
         u = page['Roles']
         for user in u:
             print(user['Arn'])
-            #f.write(user['Arn'] + "\n") 
+            f.write(user['Arn'] + "\n") 
     try:
             marker = page['Marker']
             print(marker)
