@@ -1,10 +1,17 @@
 import sys
 import boto3
+import json
+import requests
+import configparser
+import os
+import logging
+from pathlib import Path
 iam = boto3.client('iam')
 marker = None
 
 role_list = iam.list_roles()
 full_role_list = []
+roles_in_file = open("ResourcesID.txt","w+")
 
 
 while True:
@@ -16,7 +23,10 @@ while True:
         print("Next Page : {} ".format(page['IsTruncated']))
         u = page['Roles']
         for user in u:
-            full_role_list.append(user['Arn'])
-        
-for x in full_role_list:
-    print(x)
+            print(user['Arn']
+            roles_in_file.write(user['Arn'])
+ try:
+        marker = page['Marker']
+        print(marker)
+    except KeyError:
+        sys.exit()
