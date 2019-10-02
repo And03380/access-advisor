@@ -8,3 +8,26 @@ response = client.generate_service_last_accessed_details(
 )
 
 print(response.JobId)
+
+marker = None
+
+role_list = iam.list_roles()
+full_role_list = []
+
+while True:
+    paginator = iam.get_paginator('generate_service_last_accessed_details')
+    response_iterator = paginator.paginate( 
+        PaginationConfig={
+            'JobId' : 2eb6c556-cdbc-acd4-2ad2-ffb57aadecae,
+            'StartingToken': marker})
+    for page in response_iterator:
+        print("Next Page : {} ".format(page['IsTruncated']))
+        u = page['Roles']
+        for user in u:
+            print(user)
+            
+    try:
+            marker = page['Marker']
+            print(marker)
+    except KeyError:
+            sys.exit()
