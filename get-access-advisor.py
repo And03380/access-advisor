@@ -12,9 +12,9 @@ while True:
             'StartingToken': marker})
     for page in response_iterator:
         print("Next Page : {} ".format(page['IsTruncated']))
-        role_list = page['Roles']
-        for user in role_list:
-            role_list.append(user['Arn'])
+        u = page['Roles']
+        for user in u:
+            print(user['Arn'])
             
     try:
         marker = page['Marker']
