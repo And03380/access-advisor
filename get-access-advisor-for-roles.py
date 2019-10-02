@@ -2,6 +2,7 @@ import sys
 import boto3
 import json 
 import botocore
+#from bson import json_uti
 
 client = boto3.client('iam')
 
@@ -22,6 +23,8 @@ def HelperFun(x):
     print(response['ServicesLastAccessed'])
     tt = str(response['ServicesLastAccessed'])
     f3.write(tt + "\n")
+    #with open('output.json', 'w') as outfile:
+    #    json.dump(response['ServicesLastAccessed'], outfile, default=json_util.default)
 
 for role in Job_Ids_from_file:
     HelperFun(role)
