@@ -10,14 +10,15 @@ f2.close()
 
 f3= open("JobId_list.txt","w+")
 
-HelperFun = client.generate_service_last_accessed_details(Arn)
-HelperFun.get("ARN="role)
+def HelperFun(x): 
+    response = client.generate_service_last_accessed_details(
+    Arn=x
+)
 
 for role in Job_Ids_from_file:
-    HelperFun.get("ARN="role)
+    HelperFun(role)
     #response = client.generate_service_last_accessed_details(
     #Arn="\"role\": \"" + role + "\""
-#)
-    
+#)    
     print(response['JobId'])
     f3.write(response['JobId'] + "\n")
