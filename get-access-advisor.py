@@ -7,9 +7,7 @@ role_list = iam.list_roles()
 while True:
     paginator = iam.get_paginator('list_roles')
     response_iterator = paginator.paginate( 
-        PaginationConfig={
-            'PageSize': 10,
-            'StartingToken': marker})
+        PaginationConfig={'MaxItems': 1})
     for role in response_iterator:
         print("Next Page : {} ".format(role['IsTruncated']))
         u = role['Users']
