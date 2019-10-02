@@ -1,5 +1,6 @@
 import sys
 import boto3
+import botocore
 
 client = boto3.client('iam')
 
@@ -9,11 +10,14 @@ f2.close()
 
 f3= open("JobId_list.txt","w+")
 
+HelperFun = client.generate_service_last_accessed_details(Arn)
+HelperFun.get("ARN="role)
+
 for role in Job_Ids_from_file:
-    
-    response = client.generate_service_last_accessed_details(
-    Arn="\"role\": \"" + role + "\""
-)
+    HelperFun.get("ARN="role)
+    #response = client.generate_service_last_accessed_details(
+    #Arn="\"role\": \"" + role + "\""
+#)
     
     print(response['JobId'])
     f3.write(response['JobId'] + "\n")
