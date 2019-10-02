@@ -1,5 +1,10 @@
 import boto3
 
-s3 = boto3.resource('s3')
-for bucket in s3.buckets.all():
-    print(bucket.name)
+iam = boto3.resource('iam')
+role = iam.Role('name')
+
+response = client.list_roles(
+    PathPrefix='string',
+    Marker='string',
+    MaxItems=123
+)
