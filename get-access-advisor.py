@@ -4,6 +4,7 @@ iam = boto3.client('iam')
 marker = None
 
 role_list = iam.list_roles()
+full_role_list = []
 
 
 while True:
@@ -16,7 +17,7 @@ while True:
         u = page['Roles']
         for user in u:
             print(user['Arn'])
-            role_list.append(user['Arn'])
+            full_role_list.append(user['Arn'])
             
             
     try:
