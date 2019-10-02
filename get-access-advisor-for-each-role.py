@@ -3,7 +3,7 @@ import boto3
 
 client = boto3.client('iam')
 
-f3= open("JobId_list","w+")
+f3= open("JobId_list.txt","w+")
 f2 = ["arn:aws:iam::439463768147:role/flowlogsRole", "arn:aws:iam::439463768147:role/LambdaGuardrail-EC2", "arn:aws:iam::439463768147:role/RedlockReadOnlyRole",
      "arn:aws:iam::439463768147:role/S3ReadOnlyEC2Access"]
 
