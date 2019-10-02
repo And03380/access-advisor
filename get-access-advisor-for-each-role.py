@@ -7,7 +7,7 @@ response = client.generate_service_last_accessed_details(
     Arn='arn:aws:iam::439463768147:role/EKS-Managment'
 )
 
-print(response.JobId)
+print(response)
 
 marker = None
 
