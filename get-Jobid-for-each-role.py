@@ -14,11 +14,12 @@ def HelperFun(x):
     response = client.generate_service_last_accessed_details(
     Arn=x
 )
+    print(response['JobId'])
 
 for role in Job_Ids_from_file:
     HelperFun(role)
     #response = client.generate_service_last_accessed_details(
     #Arn="\"role\": \"" + role + "\""
 #)    
-    print(response['JobId'])
+    #print(response['JobId'])
     f3.write(response['JobId'] + "\n")
