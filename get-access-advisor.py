@@ -14,10 +14,13 @@ while True:
         print("Next Page : {} ".format(page['IsTruncated']))
         role_list = page['Roles']
         for user in role_list:
-            print(role_list['Arn'])
             role_list.append(user['Arn'])
+            
     try:
         marker = page['Marker']
         print(marker)
     except KeyError:
         sys.exit()
+        
+for roley in role_list:
+    print(roley)
