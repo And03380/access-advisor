@@ -16,7 +16,7 @@ while True:
             'StartingToken': marker})
     for page in response_iterator:
         u = page['Roles']
-        for user in u[0]:
+        for user in u[:1]:
             print(user['Arn'])
             f.write(user['Arn'] + "\n") 
     try:
