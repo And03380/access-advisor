@@ -13,7 +13,7 @@ while True:
             'StartingToken': marker})
     for page in response_iterator:
         print("Next Page : {} ".format(page['IsTruncated']))
-        u = page['Users']
+        u = page['Roles']
         for user in u:
             print(user['Arn'])
     try:
