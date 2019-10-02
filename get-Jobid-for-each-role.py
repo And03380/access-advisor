@@ -12,6 +12,7 @@ f3= open("JobId_list.txt","w+")
 
 def HelperFun(x): 
     y = str(x)
+    print(y)
     response = client.generate_service_last_accessed_details(
     Arn=y
 )
