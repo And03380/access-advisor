@@ -11,7 +11,7 @@ marker = None
 
 role_list = iam.list_roles()
 full_role_list = []
-roles_in_file = open("ResourcesID.txt","w+")
+f= open("ResourcesID.txt","w+")
 
 
 while True:
@@ -24,7 +24,7 @@ while True:
         u = page['Roles']
         for user in u:
             print(user['Arn']
-            roles_in_file.write(user['Arn'])
+            f.write(user['Arn'])
  try:
         marker = page['Marker']
         print(marker)
