@@ -11,6 +11,6 @@ f3= open("JobId_list.txt","w+")
 
 for role in Job_Ids_from_file:
     
-    response = client.generate_service_last_accessed_details(Arn=role)
+    response = client.generate_service_last_accessed_details(Arn='arn:aws:iam::439463768147:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonElasticsearchService')
     print(role)
     f3.write(response['JobId'] + "\n")
