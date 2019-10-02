@@ -11,8 +11,10 @@ marker = None
 
 role_list = iam.list_roles()
 full_role_list = []
-f= open("ResourcesID.txt","w+")
 
+f = open("ResourcesID.txt","w+")
+f.write("Now the file has more content!")
+f.close()
 
 while True:
     paginator = iam.get_paginator('list_roles')
@@ -24,7 +26,7 @@ while True:
         u = page['Roles']
         for user in u:
             print(user['Arn']
-            f.write(user['Arn'])
+            
  try:
         marker = page['Marker']
         print(marker)
