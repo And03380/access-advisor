@@ -6,6 +6,7 @@ import random
 client_s3 = boto3.client('s3')
 client_firehouse = boto3.client('firehose')
 client_ec2 = boto3.client('ec2')
+client_sqs = boto3.client('sqs')
 
 def events():
     for x in range(100):
@@ -29,10 +30,10 @@ def events():
             return response
 
         elif selector == 5:
-            response = client.list_buckets()
+            response = client_s3.list_buckets()
             return response
 
         else:
-            response = client.list_queues()
+            response = client_sqs.list_queues()
             return response
 events()
