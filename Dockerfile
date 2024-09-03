@@ -1,5 +1,7 @@
 FROM python:3
 
+## testing rules
+
 ADD get_web.py /
 
 RUN pip install pystrich
